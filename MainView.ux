@@ -1,0 +1,13 @@
+<App Theme="Basic">
+	<BackButton>
+		<DebugAction Message="BackButton pressed" />
+		<Set b1.Text="BACK!" />
+	</BackButton>
+	<Button Text="Arne" ux:Name="b1">
+		<Clicked>
+			<DebugAction Message="Button pressed" />
+			<Set b1.Text="Clicked" />
+		</Clicked>
+	</Button>
+</App>
+
