@@ -6,7 +6,7 @@ public class BackButton: Trigger
 
 	protected override void OnRooted(Node n)
 	{
-		if (defined(Android))
+		if defined(Android)
 		{
 			debug_log "subscribe";
 			Android.Runtime.NativeActivityHelper.OnBackPressed += OnBackButton;
@@ -18,7 +18,7 @@ public class BackButton: Trigger
 
 	protected override void OnUnrooted(Node n)
 	{
-		if (defined(Android))
+		if defined(Android)
 		{
 			debug_log "unsubscribe";
 			Android.Runtime.NativeActivityHelper.OnBackPressed -= OnBackButton;
