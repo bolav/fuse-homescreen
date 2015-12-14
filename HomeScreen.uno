@@ -8,6 +8,10 @@ using Android.android.net;
 using Android.Base;
 using Fuse.Triggers.Actions;
 
+/*
+-*- mode: C#;-*-
+*/
+
 public class HomeScreen : TriggerAction
 {
 	protected override void Perform(Node target)
