@@ -1,9 +1,9 @@
 <App Theme="Basic">
-	<BackButton>
+	<OnBackButton>
 		<DebugAction Message="BackButton pressed" />
 		<Set b1.Text="BACK!" />
 		<HomeScreen />
-	</BackButton>
+	</OnBackButton>
 	<Button Text="Arne" ux:Name="b1">
 		<Clicked>
 			<DebugAction Message="Button pressed" />
