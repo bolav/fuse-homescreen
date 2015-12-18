@@ -10,6 +10,7 @@ using Fuse.Triggers.Actions;
 
 /*
 -*- mode: C#;-*-
+vim: set ft=C#:
 */
 
 public class HomeScreen : TriggerAction
@@ -18,12 +19,8 @@ public class HomeScreen : TriggerAction
 	{
 		if defined(Android)
 		{
-			Intent callIntent = new Intent(Intent.ACTION_MAIN);
-			callIntent.addCategory(Intent.CATEGORY_HOME);
-			callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
 			var a = Activity.GetAppActivity();
-			a.startActivity(callIntent);
+			a.finish();
 		}
 		else {
 			debug_log "HomeScreen only defined for Android";
