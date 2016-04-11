@@ -2,7 +2,7 @@
 	<OnBackButton>
 		<DebugAction Message="BackButton pressed" />
 		<Set b1.Text="BACK!" />
-		<HomeScreen />
+		<HomeScreen Type="CallIntent" />
 	</OnBackButton>
 	<Button Text="Arne" ux:Name="b1">
 		<Clicked>
