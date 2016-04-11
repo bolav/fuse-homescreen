@@ -1,4 +1,5 @@
 {
+  "Name": "HomeScreen",
   "RootNamespace":"",
   "Packages": [
         "Fuse.Animations",
