@@ -1,12 +1,9 @@
 using Uno;
 using Uno.Collections;
 using Fuse;
-using Android.android.os;
-using Android.android.app;
-using Android.android.content;
-using Android.android.net;
-using Android.Base;
 using Fuse.Triggers.Actions;
+
+using Uno.Compiler.ExportTargetInterop;
 
 public enum HomeScreenType
 {
@@ -32,15 +29,10 @@ public class HomeScreen : TriggerAction
 		if defined(Android)
 		{
 			if (Type == HomeScreenType.Finish) {
-				var a = Activity.GetAppActivity();
-				a.finish();
+				ExitAppFinish();
 			}
 			else if (Type == HomeScreenType.CallIntent) {
-				Intent callIntent = new Intent(Intent.ACTION_MAIN);
-				callIntent.addCategory(Intent.CATEGORY_HOME);
-				callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				var a = Activity.GetAppActivity();
-				a.startActivity(callIntent);
+				ExitAppIntent();
 			}
 		}
 		else {
@@ -48,4 +40,21 @@ public class HomeScreen : TriggerAction
 		}
 	}
 
+	[Foreign(Language.Java)]
+	public static extern(Android) void ExitAppFinish()
+	@{
+		android.app.Activity a = @(Activity.Package).@(Activity.Name).GetRootActivity();
+		a.finish();
+	@}
+
+	[Foreign(Language.Java)]
+	public static extern(Android) void ExitAppIntent()
+	@{
+		android.content.Intent callIntent = new android.content.Intent(android.content.Intent.ACTION_MAIN);
+		callIntent.addCategory(android.content.Intent.CATEGORY_HOME);
+		callIntent.setFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+
+		android.app.Activity a = @(Activity.Package).@(Activity.Name).GetRootActivity();
+		a.startActivity(callIntent);
+	@}
 }
