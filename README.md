@@ -1,4 +1,4 @@
-Fuse HomeScreen
+Fuse HomeScreen [![Build Status](https://travis-ci.org/bolav/fuse-homescreen.svg?branch=master)](https://travis-ci.org/bolav/fuse-homescreen) ![Fuse Version](http://fuse-version.herokuapp.com/?repo=https://github.com/bolav/fuse-homescreen)
 ===============
 
 Library to go to HomeScreen for [Fuse](http://www.fusetools.com/).
@@ -11,7 +11,7 @@ Go to HomeScreen on Android from Fuse.
 
 Using [fusepm](https://github.com/bolav/fusepm)
 
-    $ fusepm install https://github.com/bolav/fuse-backbutton-trigger
+    $ fusepm install https://github.com/bolav/fuse-homescreen
 
 
 ## Usage:
