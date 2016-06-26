@@ -1,4 +1,4 @@
-<App Theme="Basic">
+<App>
 	<OnBackButton>
 		<DebugAction Message="BackButton pressed" />
 		<Set b1.Text="BACK!" />
